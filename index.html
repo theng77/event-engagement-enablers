@@ -4,99 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Event Engagement Enablers</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    background: #f5f5f5;
-    color: #333;
-}
+/* Reset & basic styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; background: #f5f5f5; }
+a { text-decoration: none; color: inherit; }
 
-header {
-    background: #0f172a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+/* Header */
+header { position: fixed; top:0; width: 100%; background: #0f172a; color: white; padding: 15px 0; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.2);}
+header h1 { text-align: center; font-size: 28px; margin-bottom: 5px; }
+nav { text-align: center; margin-top:5px; }
+nav a { color:white; margin: 0 15px; font-weight: 600; }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
-}
+/* Hero */
+.hero { height: 80vh; background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; display:flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
+.hero h2 { font-size: 42px; margin-bottom: 20px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); }
+.hero p { font-size: 20px; margin-bottom: 30px; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+.btn { background: #fbbf24; color: black; padding: 12px 25px; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+.btn:hover { background: #f59e0b; }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-}
+/* Sections */
+.section { max-width: 1100px; margin: auto; padding: 80px 20px; background:white; margin-top: 100px; border-radius: 10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.section h2 { text-align:center; margin-bottom:50px; color:#2563eb; font-size:32px;}
 
-.hero {
-    background: #2563eb;
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+.card { background:#f9f9f9; padding:25px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+.card h3 { margin-bottom:15px; color:#1d4ed8; }
+.card p { font-size: 16px; }
 
-.hero h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
+/* Event Gallery */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.gallery img { width:100%; border-radius:8px; transition:0.3s; }
+.gallery img:hover { transform: scale(1.05); }
 
-.hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
+/* Contact Form */
+form { display:flex; flex-direction: column; gap:15px; max-width:600px; margin:auto; }
+input, textarea { padding:12px; border-radius:6px; border:1px solid #ccc; font-size:16px; width:100%; }
+input[type="submit"] { background:#2563eb; color:white; font-weight:600; cursor:pointer; transition:0.3s; border:none; }
+input[type="submit"]:hover { background:#1d4ed8; }
 
-.btn {
-    background: #fbbf24;
-    color: black;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-}
+/* Footer */
+footer { background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px; }
 
-.section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
-    background: white;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #2563eb;
-}
-
-.card {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-
-ul {
-    list-style-type: disc;
-    padding-left: 40px;
-}
-
-footer {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
-
-@media(max-width:768px){
-    .hero h2 { font-size: 28px; }
-    .hero p { font-size: 16px; }
-}
+/* Responsive */
+@media(max-width:768px){ .hero h2{ font-size:28px; } .hero p{ font-size:16px; } }
 </style>
 </head>
 <body>
@@ -104,10 +59,10 @@ footer {
 <header>
     <h1>Event Engagement Enablers</h1>
     <nav>
-        <a href="#about">About Us</a>
+        <a href="#about">About</a>
         <a href="#industries">Industries</a>
         <a href="#events">Events</a>
-        <a href="#why">Why Work With Us</a>
+        <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -120,16 +75,8 @@ footer {
 
 <section id="about" class="section">
     <h2>About Us</h2>
-    <p>Event Engagement Enablers is a Manila-based specialist in delegate acquisition, executive outreach, and audience engagement. We work closely with event organizers to ensure that every conference, summit, or forum is attended by high-value professionals and decision-makers.</p>
-    <p>Our mission is simple:</p>
+    <p>Event Engagement Enablers is a Manila-based specialist in delegate acquisition, executive outreach, and audience engagement. We work closely with event organizers to ensure every event is attended by high-value professionals and decision-makers.</p>
     <blockquote>“Help event organizers deliver successful events by connecting them with the right delegates.”</blockquote>
-    <p>We specialize in:</p>
-    <ul>
-        <li>Delegate Acquisition – Recruiting senior professionals who match your target audience.</li>
-        <li>CXO & Executive Outreach – Connecting directly with CEOs, CIOs, CTOs, and senior decision-makers.</li>
-        <li>Audience Engagement – Building relationships with delegates before the event to boost participation.</li>
-        <li>Event Marketing Support – Amplifying your promotional efforts to reach the right people.</li>
-    </ul>
 </section>
 
 <section id="industries" class="section">
@@ -146,25 +93,32 @@ footer {
 
 <section id="events" class="section">
     <h2>Events We Support</h2>
-
-    <div class="card">
-        <h3>Procurement Success Summit</h3>
-        <p>A regional event bringing together procurement leaders, supply chain managers, and vendors to share insights and explore industry trends. We provide targeted delegate outreach and confirmations.</p>
+    <div class="cards">
+        <div class="card">
+            <h3>Procurement Success Summit</h3>
+            <p>Bringing procurement leaders, supply chain managers, and vendors together to share insights. We provide delegate outreach and confirmations.</p>
+        </div>
+        <div class="card">
+            <h3>Executive Leadership Roundtables</h3>
+            <p>Closed-door discussions with CXOs and senior executives. Attendance is curated to maximize strategic outcomes.</p>
+        </div>
+        <div class="card">
+            <h3>Technology & Innovation Forums</h3>
+            <p>Virtual and in-person summits on digital transformation and emerging technologies. We handle delegate acquisition for high-value participants.</p>
+        </div>
+        <div class="card">
+            <h3>Industry-specific Forums</h3>
+            <p>Customized events for healthcare, finance, or manufacturing sectors. Ensuring attendance by professionals who influence decisions.</p>
+        </div>
     </div>
+</section>
 
-    <div class="card">
-        <h3>Executive Leadership Roundtables</h3>
-        <p>Closed-door discussions with CXOs and senior executives. We ensure attendance by the most relevant decision-makers to maximize networking and strategic outcomes.</p>
-    </div>
-
-    <div class="card">
-        <h3>Technology & Innovation Forums</h3>
-        <p>Large conferences or virtual summits on digital transformation, emerging technologies, and business strategy. We handle delegate acquisition and engagement for high-value participants.</p>
-    </div>
-
-    <div class="card">
-        <h3>Industry-specific Forums</h3>
-        <p>Customized events for healthcare, finance, or manufacturing sectors. We ensure attendance by professionals who influence decisions and drive outcomes.</p>
+<section id="gallery" class="section">
+    <h2>Event Gallery</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1581091870621-5beef1263ff6?auto=format&fit=crop&w=800&q=80" alt="Event 1">
+        <img src="https://images.unsplash.com/photo-1599609878464-1f1770a4f1e0?auto=format&fit=crop&w=800&q=80" alt="Event 2">
+        <img src="https://images.unsplash.com/photo-1581091215360-8c7d660c4f83?auto=format&fit=crop&w=800&q=80" alt="Event 3">
     </div>
 </section>
 
@@ -181,11 +135,12 @@ footer {
 
 <section id="contact" class="section">
     <h2>Contact Us</h2>
-    <p><strong>Event Engagement Enablers</strong></p>
-    <p>📍 Manila, Philippines</p>
-    <p>📧 info@eventengagementenablers.com</p>
-    <p>📞 +65 9869 0715</p>
-    <p><a class="btn" href="mailto:info@eventengagementenablers.com">Email Us</a></p>
+    <form action="https://formsubmit.co/info@eventengagementenablers.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message">
+    </form>
 </section>
 
 <footer>
