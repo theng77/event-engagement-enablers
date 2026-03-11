@@ -38,42 +38,27 @@ nav a { color:white; margin: 0 15px; font-weight: 600; }
 
 /* Event Gallery */
 .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.gallery img { width:100%; border-radius:8px; transition:0.3s; }
-.gallery img:hover { transform: scale(1.05); }
+.gallery img { width:100%; border-radius:8px; transition:0.3s; cursor: pointer; }
+.gallery img:hover { transform: scale(1.05); box-shadow:0 4px 15px rgba(0,0,0,0.2); }
+
+/* Lightbox */
+#lightboxOverlay {
+    display:none;
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.85); z-index:2000; justify-content:center; align-items:center;
+}
+#lightboxOverlay img { max-width:90%; max-height:80%; border-radius:10px; }
+#lightboxOverlay span { position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer; font-weight:bold; }
 
 /* Contact Form */
-#contact form {
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    max-width:600px;
-    margin:auto;
+#contact form { display:flex; flex-direction:column; gap:15px; max-width:600px; margin:auto; }
+#contact input[type="text"], #contact input[type="email"], #contact textarea {
+    padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:16px; transition:0.3s;
 }
-#contact input[type="text"],
-#contact input[type="email"],
-#contact textarea {
-    padding:12px 15px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:16px;
-    transition:0.3s;
+#contact input[type="text"]:focus, #contact input[type="email"]:focus, #contact textarea:focus {
+    border-color:#2563eb; outline:none;
 }
-#contact input[type="text"]:focus,
-#contact input[type="email"]:focus,
-#contact textarea:focus {
-    border-color:#2563eb;
-    outline:none;
-}
-#contact input[type="submit"] {
-    background:#fbbf24;
-    color:black;
-    padding:12px 20px;
-    font-weight:600;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
-}
+#contact input[type="submit"] { background:#fbbf24; color:black; padding:12px 20px; font-weight:600; border:none; border-radius:8px; cursor:pointer; transition:0.3s; }
 #contact input[type="submit"]:hover { background:#f59e0b; }
 
 /* Footer */
@@ -148,6 +133,8 @@ footer { background:#0f172a; color:white; text-align:center; padding:30px; margi
         <img src="https://images.unsplash.com/photo-1581091870621-5beef1263ff6?auto=format&fit=crop&w=800&q=80" alt="Event 1">
         <img src="https://images.unsplash.com/photo-1599609878464-1f1770a4f1e0?auto=format&fit=crop&w=800&q=80" alt="Event 2">
         <img src="https://images.unsplash.com/photo-1581091215360-8c7d660c4f83?auto=format&fit=crop&w=800&q=80" alt="Event 3">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Event 4">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Event 5">
     </div>
 </section>
 
@@ -177,6 +164,12 @@ footer { background:#0f172a; color:white; text-align:center; padding:30px; margi
     <p>© 2026 Event Engagement Enablers</p>
 </footer>
 
+<!-- Lightbox Overlay -->
+<div id="lightboxOverlay">
+    <span id="lightboxClose">&times;</span>
+    <img id="lightboxImage" src="" alt="Event Image">
+</div>
+
 <script>
 // Contact form confirmation
 document.getElementById('contactForm').addEventListener('submit', function(e){
@@ -193,6 +186,21 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
         alert('Oops! There was a problem submitting your form.');
     });
 });
+
+// Lightbox gallery
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'flex';
+        lightboxImage.src = img.src;
+    });
+});
+lightboxClose.addEventListener('click', () => { lightboxOverlay.style.display = 'none'; });
+lightboxOverlay.addEventListener('click', (e) => { if(e.target===lightboxOverlay) lightboxOverlay.style.display='none'; });
 </script>
 
 </body>
