@@ -18,12 +18,11 @@ body{
     margin:0;
     color:#333;
     line-height:1.6;
-    /* Blue to Yellow gradient background */
     background: linear-gradient(135deg, #0a2342, #ffd700);
 }
 
 header {
-    background: rgba(255,255,255,0.9); /* Slightly transparent white to stand out */
+    background: rgba(255,255,255,0.9);
     padding:20px;
     display:flex;
     justify-content:space-between;
@@ -49,7 +48,7 @@ nav a:hover{
 }
 
 .hero{
-    background: rgba(255,255,255,0.85); /* Slightly transparent to show gradient */
+    background: rgba(255,255,255,0.85);
     text-align:center;
     padding:80px 20px;
     border-radius: 12px;
@@ -133,6 +132,26 @@ footer{
     margin-top:10px;
 }
 
+/* Client logos */
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.client-logos img {
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.client-logos img:hover {
+    transform: scale(1.1);
+}
+
 </style>
 
 </head>
@@ -198,6 +217,14 @@ footer{
     <p>
         We have supported executive roundtables, corporate forums and industry events for both local and international organizations across Southeast Asia. Our clients rely on our strong regional network and engagement expertise to bring together qualified senior executives and deliver meaningful event experiences.
     </p>
+
+    <!-- Client logos -->
+    <div class="client-logos">
+        <img src="client1.png" alt="Client 1 Logo">
+        <img src="client2.png" alt="Client 2 Logo">
+        <img src="client3.png" alt="Client 3 Logo">
+        <!-- Add more logos here -->
+    </div>
 </section>
 
 <section id="contact" class="contact">
