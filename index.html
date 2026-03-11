@@ -15,19 +15,19 @@ body {
     line-height:1.6;
     background: linear-gradient(135deg, #0a2342, #ffd700);
 }
-header {
-    background: rgba(255,255,255,0.9);
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 4px rgba(0,0,0,0.05);
-    flex-wrap: wrap;
-    gap: 15px;
-}
-header h2 { margin:0; font-size:1.5em; color:#0a2342; }
-nav a { margin-left:20px; text-decoration:none; color:#0a2342; font-weight:600; }
-nav a:hover { text-decoration:underline; }
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Event Engagement Enablers Logo">
+        <h2>Event Engagement Enablers</h2>
+    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#events">Events</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
 .hero {
     background: rgba(255,255,255,0.85);
@@ -264,6 +264,7 @@ form.addEventListener('submit', function(event) {
 
 </body>
 </html>
+
 
 
 
