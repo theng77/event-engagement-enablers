@@ -25,7 +25,6 @@ header {
     align-items:center;
     box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
-
 header h2 { margin:0; font-size:1.5em; color:#0a2342; }
 nav a { margin-left:20px; text-decoration:none; color:#0a2342; font-weight:600; }
 nav a:hover { text-decoration:underline; }
@@ -53,21 +52,16 @@ section {
 }
 h2 { color:#0a2342; margin-bottom:20px; }
 
-/* Services section with background */
+/* Services section (plain) */
 .services {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 40px 20px;
-    border-radius: 12px;
-    background: linear-gradient(rgba(10,35,66,0.6), rgba(10,35,66,0.6)), 
-                url('images/event1.jpg') no-repeat center center;
-    background-size: cover;
-    color: white;
+    padding: 20px 0;
 }
 .card {
     flex: 1 1 300px;
-    background: rgba(255, 255, 255, 0.9);
+    background: #f5f5f5;
     padding: 25px;
     border-radius: 8px;
     color: #0a2342;
@@ -172,7 +166,7 @@ footer { background:#0a2342; color:white; text-align:center; padding:20px; margi
     </p>
 </section>
 
-<!-- Services Section with background image -->
+<!-- Services Section -->
 <section id="services">
     <h2>Our Services</h2>
     <div class="services">
