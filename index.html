@@ -41,6 +41,41 @@ nav a { color:white; margin: 0 15px; font-weight: 600; }
 .gallery img { width:100%; border-radius:8px; transition:0.3s; }
 .gallery img:hover { transform: scale(1.05); }
 
+/* Contact Form */
+#contact form {
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    max-width:600px;
+    margin:auto;
+}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    padding:12px 15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+    transition:0.3s;
+}
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+    border-color:#2563eb;
+    outline:none;
+}
+#contact input[type="submit"] {
+    background:#fbbf24;
+    color:black;
+    padding:12px 20px;
+    font-weight:600;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+#contact input[type="submit"]:hover { background:#f59e0b; }
+
 /* Footer */
 footer { background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px; }
 
@@ -129,18 +164,36 @@ footer { background:#0f172a; color:white; text-align:center; padding:30px; margi
 
 <section id="contact" class="section">
     <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/estrellita.boctoy2017@gmail.com" method="POST">
+    <form id="contactForm" action="https://formsubmit.co/estrellita.boctoy2017@gmail.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message">
+        <input type="submit" value="Send Message" class="btn">
     </form>
-    <p>We’ll respond to your inquiry as soon as possible.</p>
+    <p id="confirmationMessage" style="display:none; margin-top:20px; color:#16a34a; font-weight:600;">Thank you! Your message has been sent. We’ll respond shortly.</p>
 </section>
 
 <footer>
     <p>© 2026 Event Engagement Enablers</p>
 </footer>
+
+<script>
+// Contact form confirmation
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const form = e.target;
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(() => {
+        form.reset();
+        document.getElementById('confirmationMessage').style.display = 'block';
+    }).catch(() => {
+        alert('Oops! There was a problem submitting your form.');
+    });
+});
+</script>
 
 </body>
 </html>
