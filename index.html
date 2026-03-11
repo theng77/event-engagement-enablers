@@ -127,24 +127,29 @@ footer {
     margin-top:10px;
 }
 
-/* Client logos */
+/* Client logos - neat single row with shadows */
 .client-logos {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 40px;
     margin-top: 30px;
 }
 
 .client-logos img {
     max-height: 80px;
     object-fit: contain;
-    transition: transform 0.3s;
+    border-radius:8px;
+    padding:10px;
+    background:white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .client-logos img:hover {
     transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -205,7 +210,6 @@ footer {
         We have supported executive roundtables, corporate forums and industry events for both local and international organizations across Southeast Asia. Our clients rely on our strong regional network and engagement expertise to bring together qualified senior executives and deliver meaningful event experiences.
     </p>
 
-    <!-- Client logos -->
     <div class="client-logos">
         <img src="images/client1.png" alt="Client 1 Logo">
         <img src="images/client2.png" alt="Client 2 Logo">
