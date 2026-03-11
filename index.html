@@ -13,7 +13,88 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+.section-intro{
+    max-width:750px;
+    margin-bottom:25px;
+}
 
+.upcoming-events{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:stretch;
+    margin-top:25px;
+}
+
+.event-card{
+    flex:1 1 300px;
+    max-width:340px;
+    background:linear-gradient(180deg,#ffffff,#f7f9fc);
+    border-radius:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.10);
+    overflow:hidden;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    border:1px solid rgba(10,35,66,0.08);
+}
+
+.event-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.16);
+}
+
+.event-card-content{
+    padding:28px 24px;
+}
+
+.event-card h3{
+    margin-top:10px;
+    margin-bottom:14px;
+    color:#0a2342;
+    font-size:1.25rem;
+}
+
+.event-card p{
+    margin:10px 0;
+}
+
+.event-tag{
+    display:inline-block;
+    background:#ffd700;
+    color:#0a2342;
+    font-size:0.85rem;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:999px;
+}
+
+.event-btn{
+    display:inline-block;
+    margin-top:18px;
+    background:#0a2342;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight:600;
+    transition:background 0.3s ease;
+}
+
+.event-btn:hover{
+    background:#134070;
+}
+
+@media (max-width:768px){
+    .upcoming-events{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .event-card{
+        max-width:100%;
+        width:100%;
+    }
+}
 body{
 font-family:'Inter',sans-serif;
 margin:0;
@@ -452,6 +533,7 @@ alert('Oops! There was a problem submitting your form');
 
 </body>
 </html>
+
 
 
 
