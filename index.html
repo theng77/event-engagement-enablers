@@ -6,288 +6,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Event Engagement Enablers</title>
-<meta name="description" content="Large Scale Conferences, CXO Roundtable, Executive Meetings Delegate Acquisition Services">
+<meta name="description" content="Executive roundtables, conferences, and delegate engagement across Asia, Europe, and the Middle East.">
 
 <link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3B4H82PC3W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3B4H82PC3W');
+</script>
+
 <style>
-.section-intro{
-    max-width:750px;
-    margin-bottom:25px;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.upcoming-events{
-    display:flex;
-    gap:24px;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:stretch;
-    margin-top:25px;
-}
-
-.event-card{
-    flex:1 1 300px;
-    max-width:340px;
-    background:linear-gradient(180deg,#ffffff,#f7f9fc);
-    border-radius:16px;
-    box-shadow:0 8px 22px rgba(0,0,0,0.10);
-    overflow:hidden;
-    transition:transform 0.3s ease, box-shadow 0.3s ease;
-    border:1px solid rgba(10,35,66,0.08);
-}
-
-.event-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 14px 30px rgba(0,0,0,0.16);
-}
-
-.event-card-content{
-    padding:28px 24px;
-}
-
-.event-card h3{
-    margin-top:10px;
-    margin-bottom:14px;
-    color:#0a2342;
-    font-size:1.25rem;
-}
-
-.event-card p{
-    margin:10px 0;
-}
-
-.event-tag{
-    display:inline-block;
-    background:#ffd700;
-    color:#0a2342;
-    font-size:0.85rem;
-    font-weight:700;
-    padding:6px 12px;
-    border-radius:999px;
-}
-
-.event-btn{
-    display:inline-block;
-    margin-top:18px;
-    background:#0a2342;
-    color:#fff;
-    text-decoration:none;
-    padding:12px 18px;
-    border-radius:8px;
-    font-weight:600;
-    transition:background 0.3s ease;
-}
-
-.event-btn:hover{
-    background:#134070;
-}
-
-@media (max-width:768px){
-    .upcoming-events{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .event-card{
-        max-width:100%;
-        width:100%;
-    }
-}
 body{
 font-family:'Inter',sans-serif;
-margin:0;
-color:#333;
 line-height:1.6;
-background:linear-gradient(135deg,#0a2342,#ffd700);
+color:#333;
+background:#ffffff;
 }
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,0.95);
-backdrop-filter:blur(10px);
-padding:16px 24px;
+background:#0b3d91;
+color:white;
+padding:20px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 4px 14px rgba(0,0,0,0.08);
-flex-wrap:wrap;
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.brand img{
-height:55px;
-}
-
-.brand h2{
-margin:0;
-font-size:1.3rem;
-color:#0a2342;
+header h1{
+font-size:20px;
+font-weight:700;
 }
 
 nav a{
-margin-left:20px;
+color:white;
 text-decoration:none;
-color:#0a2342;
-font-weight:600;
-}
-
-nav a:hover{
-text-decoration:underline;
+margin-left:20px;
+font-weight:500;
 }
 
 .hero{
-background:rgba(255,255,255,0.9);
+background:linear-gradient(120deg,#0b3d91,#1f6ed4);
+color:white;
+padding:80px 40px;
 text-align:center;
-padding:80px 20px;
-border-radius:14px;
-margin:25px auto;
-max-width:1100px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-.hero-logo img{
-max-width:140px;
-margin-bottom:15px;
-}
-
-.hero h1{
-font-size:2.6em;
-color:#0a2342;
-margin-bottom:10px;
+.hero h2{
+font-size:40px;
+margin-bottom:20px;
 }
 
 .hero p{
-max-width:750px;
+font-size:18px;
+max-width:800px;
 margin:auto;
-font-size:1.1em;
 }
 
 section{
-padding:60px 20px;
+padding:60px 40px;
 max-width:1100px;
 margin:auto;
-background:rgba(255,255,255,0.9);
-border-radius:14px;
-margin-bottom:30px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-h2{
-color:#0a2342;
+.section-title{
+font-size:28px;
 margin-bottom:20px;
 }
 
 .services{
-display:flex;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.card{
-flex:1 1 300px;
-background:#f5f5f5;
+.service-box{
+border:1px solid #eee;
 padding:25px;
-border-radius:10px;
-color:#0a2342;
-}
-
-.event-gallery{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-margin-top:20px;
-}
-
-.event-gallery img{
-width:100%;
-max-width:320px;
-height:220px;
-object-fit:cover;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.client-logos{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px;
-margin-top:30px;
-}
-
-.client-logos img{
-max-height:80px;
-background:white;
-padding:10px;
 border-radius:8px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+background:white;
 }
 
-.contact input,
-.contact textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
-border-radius:6px;
-border:1px solid #ccc;
+.events{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-button{
-background:#0a2342;
+.event-card{
+border:1px solid #eee;
+padding:25px;
+border-radius:8px;
+background:white;
+}
+
+.event-tag{
+font-size:12px;
+background:#ffd200;
+padding:5px 10px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.event-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:#0b3d91;
 color:white;
-border:none;
-padding:12px 20px;
-border-radius:5px;
-font-weight:600;
-cursor:pointer;
-}
-
-button:hover{
-background:#134070;
+text-decoration:none;
+border-radius:4px;
 }
 
 footer{
-background:#0a2342;
+background:#0b3d91;
 color:white;
 text-align:center;
 padding:20px;
 margin-top:40px;
-border-radius:14px 14px 0 0;
-}
-
-#form-success{
-color:green;
-font-weight:600;
-display:none;
-margin-top:10px;
-}
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-text-align:center;
-}
-
-nav a{
-display:inline-block;
-margin:8px 10px;
-}
-
-.hero h1{
-font-size:2em;
-}
-
 }
 
 </style>
@@ -297,253 +146,112 @@ font-size:2em;
 <body>
 
 <header>
-
-<div class="brand">
-<img src="logo.png" alt="Event Engagement Enablers Logo">
-<h2>Event Engagement Enablers</h2>
-</div>
+<h1>Event Engagement Enablers</h1>
 
 <nav>
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#events">Events</a>
-<a href="#upcoming">Upcoming Events</a>
-<a href="#clients">Clients</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </header>
 
-
 <section class="hero">
-
-<div class="hero-logo">
-
-</div>
-
-<h1> Global Delegate Acquisition & Executive Audience Recruitment for B2B Events</h1>
+<h2>Global Delegate Acquisition & Executive Audience Recruitment</h2>
 
 <p>
-We provide professional delegate acquisition and executive audience recruitment services for B2B conferences, executive roundtables, and corporate events across Southeast Asia, Asia-Pacific, Europe, and the Middle East.</p>
-
+We provide professional delegate acquisition and executive audience recruitment services for B2B conferences, executive roundtables, and corporate events across Southeast Asia, Asia-Pacific, Europe, and the Middle East.
+</p>
 </section>
-
-
-<section id="events">
-
-<h2>Our Events</h2>
-
-<div class="event-gallery">
-
-<img src="event1.jpg" alt="Event 1">
-<img src="event2.jpg" alt="Event 2">
-<img src="event3.jpg" alt="Event 3">
-<img src="event4.jpg" alt="Event 4">
-<img src="event5.jpg" alt="Event 5">
-<img src="event6.jpg" alt="Event 6">
-<img src="event7.jpg" alt="Event 7">
-<img src="event8.jpg" alt="Event 8">
-
-</div>
-
-</section>
-
 
 <section id="about">
 
-    <h2>About Event Engagement Enablers
-</h2>
+<h2 class="section-title">About Event Engagement Enablers</h2>
 
-    <p>
+<p>
+Event Engagement Enablers specializes in CXO roundtables, large-scale conferences, executive meetings, corporate events, and strategic delegate engagement across Asia, Europe, and the Middle East.
+</p>
 
-Event Engagement Enablers is a professional team specializing in CXO roundtables, large-scale conferences, executive meetings, corporate events, and strategic delegate engagement across Asia, Europe, and the Middle East.
-
-We partner with global technology companies and enterprise organizations to deliver high-quality, curated audiences of senior decision-makers across key business functions including technology, marketing, human resources, operations, finance, and digital transformation.
-
-Our events bring together influential leaders such as CIOs, CTOs, CISOs, CMOs, CHROs, and other C-level executives who are driving business strategy, innovation, and digital transformation within their organizations.
-
-Our expertise covers delegate acquisition, executive outreach campaigns, speaker coordination, audience engagement, and end-to-end event logistics, ensuring meaningful discussions, high-value networking, and impactful event experiences for both clients and participants.    </p>
-
-    <p>
-        We work closely with global technology companies and enterprise clients to deliver curated audiences of senior decision-makers across multiple functions, including technology, marketing, human resources, operations, finance, and digital transformation. Our events regularly bring together leaders such as CIOs, CTOs, CISOs, CMOs, CHROs, and other senior executives shaping business strategy and innovation.
-    </p>
-
-    <p>
-        Our expertise includes delegate acquisition, executive outreach campaigns, speaker coordination, on-site engagement, and end-to-end event logistics to ensure high-quality participation and meaningful discussions.
-    </p>
+<p>
+We partner with global technology companies and enterprise organizations to deliver curated audiences of senior decision-makers including CIOs, CTOs, CISOs, CMOs, CHROs, and other C-level executives.
+</p>
 
 </section>
-
 
 <section id="services">
 
-<h2>Our Services</h2>
+<h2 class="section-title">Our Services</h2>
 
 <div class="services">
 
-<div class="card">
-<h3>CXO Roundtable</h3>
-<p>Private leadership discussions with carefully selected CXO-level executives.</p>
+<div class="service-box">
+<h3>Delegate Acquisition</h3>
+<p>Targeted outreach to bring qualified decision-makers to your event.</p>
 </div>
 
-<div class="card">
-<h3>Large Scale Conferences</h3>
-<p>Targeted outreach campaigns to secure qualified enterprise decision-makers.</p>
+<div class="service-box">
+<h3>Executive Roundtables</h3>
+<p>Curated peer-to-peer discussions for senior leaders.</p>
 </div>
 
-<div class="card">
-<h3>Executive Meetings</h3>
-<p>End-to-end support including venue sourcing, logistics and reporting.</p>
+<div class="service-box">
+<h3>Corporate Events</h3>
+<p>Support for large-scale conferences and executive gatherings.</p>
+</div>
+
+<div class="service-box">
+<h3>Audience Recruitment</h3>
+<p>Building high-quality attendee lists aligned with client objectives.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="upcoming">
+<section id="events">
 
-<h2>Upcoming Events</h2>
+<h2 class="section-title">Upcoming Events</h2>
 
-<p class="section-intro">
-    Explore our upcoming CXO roundtable, Large Scale Conferences and leadership events across Asia, Europe and Middle East.
-</p>
+<div class="events">
 
-<div class="upcoming-events">
+<div class="event-card">
 
-    <div class="event-card">
-        <div class="event-card-content">
-            <span class="event-tag">Large Scale Conference</span>
-            <h3>Large Scale Event – Vietnam</h3>
-            <p>
-                Join senior technology and business leaders for a large scale forum discussing innovation, digital transformation, and leadership strategies.
-            </p>
-            <p><strong>Date:</strong> May 2026</p>
-            <p><strong>Location:</strong> Vietnam</p>
-            <a href="#contact" class="event-btn">Register Interest</a>
-        </div>
-    </div>
+<span class="event-tag">Large Scale Conference</span>
 
-    <div class="event-card">
-        <div class="event-card-content">
-            <span class="event-tag">Leadership Forum</span>
-            <h3>CIO Leadership Roundtable – Singapore</h3>
-            <p>
-                An exclusive gathering of CIOs, CTOs, and digital leaders discussing the future of enterprise technology, AI strategy, and innovation across Asia.
-            </p>
-            <p><strong>Date:</strong> 15 June 2026</p>
-            <p><strong>Location:</strong> Singapore</p>
-            <a href="#contact" class="event-btn">Register Interest</a>
-        </div>
-    </div>
-
-    <div class="event-card">
-        <div class="event-card-content">
-            <span class="event-tag">Procurement Success Summit</span>
-            <h3>AI Innovation Forum – Hong Kong</h3>
-            <p>
-                A private forum bringing together senior Procurement Leaders exploring AI transformation, operational efficiency, and business innovation across Southeast Asia.
-            </p>
-            <p><strong>Date:</strong> March 2026</p>
-            <p><strong>Location:</strong> Hong Kong</p>
-            <a href="#contact" class="event-btn">Register Interest</a>
-        </div>
-    </div>
-
-    <div class="event-card">
-        <div class="event-card-content">
-            <span class="event-tag">Large Scale Conference</span>
-            <h3>Future of HR: AI &amp; Workforce Transformation</h3>
-            <p>
-                The AI-Driven HR Leadership Roundtable brings together CHROs and HR leaders to explore how AI is transforming the future of HR.
-            </p>
-            <p><strong>Date:</strong> June 2026</p>
-            <p><strong>Location:</strong> Amsterdam</p>
-            <a href="#contact" class="event-btn">Register Interest</a>
-        </div>
-    </div>
-
-</div>
-</section>
-
-
-
-<section id="clients">
-
-<h2>Trusted by Local and Global Clients</h2>
+<h3>Future of HR: AI & Workforce Transformation</h3>
 
 <p>
-We have supported executive roundtables, corporate forums and industry events for both local and international organizations across Southeast Asia.
+The AI-Driven HR Leadership Roundtable brings together CHROs and HR leaders to explore how AI is transforming the future of HR.
 </p>
 
-<div class="client-logos">
+<p><strong>Date:</strong> June 2026</p>
+<p><strong>Location:</strong> Amsterdam</p>
 
-<img src="logo1.png" alt="Client Logo 1">
-<img src="logo2.png" alt="Client Logo 2">
-<img src="logo3.png" alt="Client Logo 3">
-<img src="logo4.png" alt="Client Logo 4">
-<img src="logo5.png" alt="Client Logo 5">
+<a href="#contact" class="event-btn">Register Interest</a>
+
+</div>
 
 </div>
 
 </section>
 
+<section id="contact">
 
-<section id="contact" class="contact">
+<h2 class="section-title">Contact Us</h2>
 
-<h2>Let's Collaborate!</h2>
+<p>Email: estrellita.boctoy2017@gmail.com</p>
 
-<p>We offer competitive packages for CXO and Large Scale Conferences. This is our way of understanding how competition with quality works!</p>
-
-<form id="contact-form" action="https://formspree.io/f/xjgawyow" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Your Email" required>
-
-<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-<p id="form-success">Thank you! Your message has been sent.</p>
+<p>
+If you are interested in partnering with us or attending one of our executive events, please reach out and our team will be happy to assist.
+</p>
 
 </section>
-
 
 <footer>
 
-<p>© 2026 Event Engagement Enablers. All Rights Reserved.</p>
+<p>© 2026 Event Engagement Enablers</p>
 
 </footer>
-
-
-<script>
-
-const form=document.getElementById('contact-form');
-const success=document.getElementById('form-success');
-
-form.addEventListener('submit',function(e){
-
-e.preventDefault();
-
-fetch(form.action,{
-method:'POST',
-body:new FormData(form),
-headers:{'Accept':'application/json'}
-})
-.then(response=>{
-if(response.ok){
-success.style.display='block';
-form.reset();
-}else{
-alert('Oops! There was a problem submitting your form');
-}
-});
-
-});
-
-</script>
 
 </body>
 </html>
