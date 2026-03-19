@@ -21,7 +21,6 @@ line-height:1.6;
 background:linear-gradient(135deg,#0a2342,#ffd700);
 }
 
-/* HEADER */
 header{
 position:sticky;
 top:0;
@@ -58,7 +57,6 @@ color:#0a2342;
 font-weight:600;
 }
 
-/* HERO */
 .hero{
 background:rgba(255,255,255,0.9);
 text-align:center;
@@ -68,7 +66,6 @@ margin:25px auto;
 max-width:1100px;
 }
 
-/* SECTIONS */
 section{
 padding:60px 20px;
 max-width:1100px;
@@ -78,7 +75,6 @@ border-radius:14px;
 margin-bottom:30px;
 }
 
-/* EVENTS GALLERY */
 .event-gallery{
 display:flex;
 flex-wrap:wrap;
@@ -103,7 +99,6 @@ transition:0.3s ease;
 transform:scale(1.05);
 }
 
-/* UPCOMING EVENTS */
 .section-intro{
 max-width:750px;
 margin-bottom:25px;
@@ -150,7 +145,6 @@ border-radius:8px;
 text-decoration:none;
 }
 
-/* CLIENT LOGOS */
 .client-logos{
 display:flex;
 justify-content:center;
@@ -167,7 +161,6 @@ border-radius:8px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* CONTACT */
 .contact input,
 .contact textarea{
 width:100%;
@@ -187,13 +180,19 @@ font-weight:600;
 cursor:pointer;
 }
 
-/* FOOTER */
 footer{
 background:#0a2342;
 color:white;
 text-align:center;
 padding:20px;
 margin-top:40px;
+}
+
+#form-success{
+display:none;
+color:green;
+font-weight:600;
+margin-top:10px;
 }
 
 </style>
@@ -209,7 +208,6 @@ margin-top:40px;
 
 <nav>
 <a href="#about">About</a>
-<a href="#services">Services</a>
 <a href="#events">Events</a>
 <a href="#upcoming">Upcoming Events</a>
 <a href="#clients">Clients</a>
@@ -222,7 +220,6 @@ margin-top:40px;
 <p>We provide professional delegate acquisition and executive audience recruitment services across global markets.</p>
 </section>
 
-<!-- EVENTS -->
 <section id="events">
 <h2>Our Events</h2>
 
@@ -239,26 +236,24 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
 <h2>About Event Engagement Enablers</h2>
 
 <p>
-<strong>Event Engagement Enablers</strong> specializes in <strong>delegate acquisition and executive audience recruitment</strong> for CXO roundtables, large-scale conferences, and executive meetings across Asia, Europe, and the Middle East.
+Event Engagement Enablers specializes in delegate acquisition and executive audience recruitment for CXO roundtables, large-scale conferences, and executive meetings across Asia, Europe, and the Middle East.
 </p>
 
 <p>
-We connect global organizations with <strong>senior decision-makers and C-level executives</strong> through data-driven outreach and strategic targeting—ensuring high-quality delegates, meaningful engagement, and measurable event success.
+We connect global organizations with senior decision-makers and C-level executives through data-driven outreach and strategic targeting, ensuring high-quality delegates, meaningful engagement, and measurable event success.
 </p>
 
 </section>
 
-<!-- UPCOMING -->
 <section id="upcoming">
 <h2>Upcoming Events</h2>
 
 <p class="section-intro">
-Explore our upcoming CXO roundtables and Large Scale Conferences across Asia, Middles East and Europe.
+Explore our upcoming CXO roundtables and Large Scale Conferences across Asia, Middle East and Europe.
 </p>
 
 <div class="upcoming-events">
@@ -298,7 +293,6 @@ Explore our upcoming CXO roundtables and Large Scale Conferences across Asia, Mi
 </div>
 </section>
 
-<!-- CLIENTS -->
 <section id="clients">
 <h2>Trusted by Clients</h2>
 
@@ -312,26 +306,53 @@ Explore our upcoming CXO roundtables and Large Scale Conferences across Asia, Mi
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
 <h2>Let’s Collaborate on Your Next Executive Event</h2>
 
 <p>
-Partner with <strong>Event Engagement Enablers</strong> for <strong>delegate acquisition, executive audience recruitment, and targeted outreach</strong> that connects you with <strong>senior decision-makers, C-level executives, and high-value delegates</strong>—ensuring impactful CXO roundtables, large-scale conferences, and executive meetings.
+Partner with Event Engagement Enablers for delegate acquisition, executive audience recruitment, and targeted outreach that connects you with senior decision-makers and C-level executives, ensuring impactful CXO roundtables, large-scale conferences, and executive meetings.
 </p>
 
-<form action="https://formspree.io/f/yourformid" method="POST">
+<form id="contact-form" action="https://formspree.io/f/YOURFORMID" method="POST">
+<input type="hidden" name="_subject" value="New Website Inquiry">
+
 <input type="text" name="name" placeholder="Name" required>
 <input type="email" name="email" placeholder="Email" required>
 <textarea name="message" rows="5" placeholder="Message"></textarea>
+
 <button type="submit">Send</button>
 </form>
+
+<p id="form-success">Thank you! We'll be in touch shortly.</p>
 
 </section>
 
 <footer>
 <p>© 2026 Event Engagement Enablers</p>
 </footer>
+
+<script>
+const form = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+
+form.addEventListener('submit', function(e){
+e.preventDefault();
+
+fetch(form.action, {
+method: 'POST',
+body: new FormData(form),
+headers: {'Accept': 'application/json'}
+})
+.then(response => {
+if(response.ok){
+success.style.display = 'block';
+form.reset();
+} else {
+alert('There was a problem. Please try again.');
+}
+});
+});
+</script>
 
 </body>
 </html>
