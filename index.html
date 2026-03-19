@@ -176,18 +176,6 @@ padding:20px;
 margin-top:40px;
 }
 
-#form-success{
-display:none;
-color:green;
-font-weight:600;
-}
-
-#form-error{
-display:none;
-color:red;
-font-weight:600;
-}
-
 </style>
 </head>
 
@@ -299,48 +287,28 @@ Explore our upcoming CXO roundtables and Large Scale Conferences across Asia, Mi
 <h2>Let’s Collaborate on Your Next Executive Event</h2>
 
 <p>
-Partner with Event Engagement Enablers for delegate acquisition and executive audience recruitment. Connect with us directly at <strong>avianmonique@engagementenablers.org</strong> or send us a message below.
+Partner with Event Engagement Enablers for delegate acquisition and executive audience recruitment. You may also reach us directly at avianmonique@engagementenablers.org.
 </p>
 
-<form id="contact-form">
-<input type="text" name="from_name" placeholder="Name" required>
-<input type="email" name="reply_to" placeholder="Email" required>
+<form action="https://formsubmit.co/avianmonique@engagementenablers.org" method="POST">
+
+<input type="hidden" name="_subject" value="New Website Inquiry">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
 <textarea name="message" placeholder="Message" required></textarea>
 
 <button type="submit">Send</button>
-</form>
 
-<p id="form-success">Message sent successfully to avianmonique@engagementenablers.org</p>
-<p id="form-error"></p>
+</form>
 
 </section>
 
 <footer>
 <p>© 2026 Event Engagement Enablers</p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-emailjs.init("YOUR_PUBLIC_KEY");
-})();
-
-document.getElementById("contact-form").addEventListener("submit", function(e){
-e.preventDefault();
-
-emailjs.sendForm(
-"YOUR_SERVICE_ID",
-"YOUR_TEMPLATE_ID",
-this
-).then(function(){
-document.getElementById("form-success").style.display="block";
-}, function(error){
-document.getElementById("form-error").innerText=error.text;
-document.getElementById("form-error").style.display="block";
-});
-});
-</script>
 
 </body>
 </html>
