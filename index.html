@@ -355,8 +355,8 @@ Partner with Event Engagement Enablers for delegate acquisition, executive audie
 <button type="submit" id="submit-btn">Send</button>
 </form>
 
-<p id="form-success">Thank you! Your message has been sent to avianmonique@engagementenablers.org.</p>
-<p id="form-error">There was a problem sending your message. Please try again.</p>
+<p id="form-success">Thank you. Your message has been sent to avianmonique@engagementenablers.org.</p>
+<p id="form-error"></p>
 </section>
 
 <footer>
@@ -384,12 +384,15 @@ error.style.display = 'none';
 submitBtn.disabled = true;
 submitBtn.textContent = 'Sending...';
 
-emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-.then(function() {
+emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#contact-form')
+.then(function(response) {
+console.log('SUCCESS', response.status, response.text);
 success.style.display = 'block';
 form.reset();
-}, function() {
+}, function(err) {
+console.error('EMAILJS ERROR:', err);
 error.style.display = 'block';
+error.textContent = 'Sending failed: ' + (err.text || err.message || 'Unknown EmailJS error');
 })
 .finally(function() {
 submitBtn.disabled = false;
