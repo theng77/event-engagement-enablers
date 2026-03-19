@@ -92,6 +92,11 @@ border-radius:12px;
 background:#fff;
 padding:6px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s ease;
+}
+
+.event-gallery img:hover{
+transform:scale(1.05);
 }
 
 .section-intro{
@@ -109,10 +114,15 @@ justify-content:center;
 .event-card{
 flex:1 1 300px;
 max-width:340px;
-background:#fff;
+background:linear-gradient(180deg,#ffffff,#f7f9fc);
 border-radius:16px;
 box-shadow:0 8px 22px rgba(0,0,0,0.10);
 padding:24px;
+transition:0.3s;
+}
+
+.event-card:hover{
+transform:translateY(-5px);
 }
 
 .event-tag{
@@ -148,6 +158,7 @@ max-height:80px;
 background:white;
 padding:10px;
 border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .contact input,
@@ -157,6 +168,9 @@ padding:10px;
 margin:10px 0;
 border-radius:6px;
 border:1px solid #ccc;
+font-family:'Inter',sans-serif;
+font-size:1rem;
+box-sizing:border-box;
 }
 
 button{
@@ -165,7 +179,17 @@ color:white;
 border:none;
 padding:12px 20px;
 border-radius:5px;
+font-weight:600;
 cursor:pointer;
+}
+
+button:hover{
+background:#12365f;
+}
+
+button:disabled{
+opacity:0.7;
+cursor:not-allowed;
 }
 
 footer{
@@ -180,12 +204,34 @@ margin-top:40px;
 display:none;
 color:green;
 font-weight:600;
+margin-top:10px;
 }
 
 #form-error{
 display:none;
-color:red;
+color:#b00020;
 font-weight:600;
+margin-top:10px;
+}
+
+@media(max-width:768px){
+header{
+flex-direction:column;
+text-align:center;
+}
+
+nav a{
+display:inline-block;
+margin:8px 10px;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:2rem;
+}
 }
 
 </style>
@@ -195,7 +241,7 @@ font-weight:600;
 
 <header>
 <div class="brand">
-<img src="logo.png">
+<img src="logo.png" alt="Event Engagement Enablers Logo">
 <h2>Event Engagement Enablers</h2>
 </div>
 
@@ -217,15 +263,15 @@ font-weight:600;
 <h2>Our Events</h2>
 
 <div class="event-gallery">
-<img src="event1.jpg">
-<img src="event2.jpg">
-<img src="event3.jpg">
-<img src="event4.jpg">
-<img src="event5.jpg">
-<img src="event6.jpg">
-<img src="event7.jpg">
-<img src="event8.jpg">
-<img src="event11.jpg">
+<img src="event1.jpg" alt="Event 1">
+<img src="event2.jpg" alt="Event 2">
+<img src="event3.jpg" alt="Event 3">
+<img src="event4.jpg" alt="Event 4">
+<img src="event5.jpg" alt="Event 5">
+<img src="event6.jpg" alt="Event 6">
+<img src="event7.jpg" alt="Event 7">
+<img src="event8.jpg" alt="Event 8">
+<img src="event11.jpg" alt="Event 11">
 </div>
 </section>
 
@@ -239,7 +285,6 @@ Event Engagement Enablers specializes in delegate acquisition and executive audi
 <p>
 We connect global organizations with senior decision-makers and C-level executives through data-driven outreach and strategic targeting, ensuring high-quality delegates, meaningful engagement, and measurable event success.
 </p>
-
 </section>
 
 <section id="upcoming">
@@ -250,67 +295,109 @@ Explore our upcoming CXO roundtables and Large Scale Conferences across Asia, Mi
 </p>
 
 <div class="upcoming-events">
+
 <div class="event-card">
 <span class="event-tag">Large Scale Conference</span>
 <h3>Executive Roundtable Session, Taiwan</h3>
 <p>Date: April 16, 2026</p>
 <p>Location: Le Méridien Taipei</p>
-</div>
+<a href="#contact" class="event-btn">Register Interest</a>
 </div>
 
+<div class="event-card">
+<span class="event-tag">Leadership Forum</span>
+<h3>Executive Luncheon Discussion, Bangkok, Thailand</h3>
+<p>Date: March 26, 2026</p>
+<p>Venue: The Athenee Hotel</p>
+<a href="#contact" class="event-btn">Register Interest</a>
+</div>
+
+<div class="event-card">
+<span class="event-tag">Procurement Summit</span>
+<h3>AI Forum, Hong Kong</h3>
+<p>Date: March 2026</p>
+<p>Location: Hilton Garden Inn Hong Kong Mongkok</p>
+<a href="#contact" class="event-btn">Completed</a>
+</div>
+
+<div class="event-card">
+<span class="event-tag">Large Scale Conference</span>
+<h3>Future of HR, Amsterdam</h3>
+<p>Date: June 2026</p>
+<p>Location: Amsterdam</p>
+<a href="#contact" class="event-btn">Register Interest</a>
+</div>
+
+</div>
 </section>
 
 <section id="clients">
 <h2>Trusted by Clients</h2>
+
 <div class="client-logos">
-<img src="logo1.png">
-<img src="logo2.png">
-<img src="logo3.png">
-<img src="logo4.png">
-<img src="logo5.png">
-<img src="logo6.png">
+<img src="logo1.png" alt="Client Logo 1">
+<img src="logo2.png" alt="Client Logo 2">
+<img src="logo3.png" alt="Client Logo 3">
+<img src="logo4.png" alt="Client Logo 4">
+<img src="logo5.png" alt="Client Logo 5">
+<img src="logo6.png" alt="Client Logo 6">
 </div>
 </section>
 
 <section id="contact" class="contact">
 <h2>Let’s Collaborate on Your Next Executive Event</h2>
 
+<p>
+Partner with Event Engagement Enablers for delegate acquisition, executive audience recruitment, and targeted outreach that connects you with senior decision-makers and C-level executives, ensuring impactful CXO roundtables, large-scale conferences, and executive meetings.
+</p>
+
 <form id="contact-form">
 <input type="text" name="from_name" placeholder="Name" required>
 <input type="email" name="reply_to" placeholder="Email" required>
-<textarea name="message" placeholder="Message" required></textarea>
-
-<button type="submit">Send</button>
+<textarea name="message" rows="5" placeholder="Message" required></textarea>
+<button type="submit" id="submit-btn">Send</button>
 </form>
 
-<p id="form-success">Message sent successfully!</p>
+<p id="form-success">Thank you. Your message has been sent successfully.</p>
 <p id="form-error"></p>
-
 </section>
 
 <footer>
 <p>© 2026 Event Engagement Enablers</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function(){
-emailjs.init("PASTE_YOUR_PUBLIC_KEY_HERE");
+emailjs.init({
+publicKey: "YOUR_PUBLIC_KEY"
+});
 })();
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
+const form = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+const error = document.getElementById('form-error');
+const submitBtn = document.getElementById('submit-btn');
+
+form.addEventListener('submit', function(e){
 e.preventDefault();
 
-emailjs.sendForm(
-"PASTE_YOUR_SERVICE_ID",
-"PASTE_YOUR_TEMPLATE_ID",
-this
-).then(function(){
-document.getElementById("form-success").style.display="block";
-}, function(error){
-document.getElementById("form-error").innerText=error.text;
-document.getElementById("form-error").style.display="block";
+success.style.display = 'none';
+error.style.display = 'none';
+submitBtn.disabled = true;
+submitBtn.textContent = 'Sending...';
+
+emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#contact-form')
+.then(function() {
+success.style.display = 'block';
+form.reset();
+}, function(err) {
+error.style.display = 'block';
+error.textContent = 'Sending failed: ' + (err.text || err.message || 'Unknown EmailJS error');
+})
+.finally(function() {
+submitBtn.disabled = false;
+submitBtn.textContent = 'Send';
 });
 });
 </script>
